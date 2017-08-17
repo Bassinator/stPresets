@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textView: UITextView!
+    
+    var soundtouch:HTTPCommunication = HTTPCommunication()
+   
+    @IBAction func didPressGetPresets(_ sender: Any) {
+        
+        textView.text = soundtouch.getPreset()
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

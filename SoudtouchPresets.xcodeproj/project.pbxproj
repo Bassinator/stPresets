@@ -12,6 +12,11 @@
 		0337F9CA1F16A43C003860E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9C81F16A43C003860E3 /* Main.storyboard */; };
 		0337F9CC1F16A43C003860E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9CB1F16A43C003860E3 /* Assets.xcassets */; };
 		0337F9CF1F16A43C003860E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9CD1F16A43C003860E3 /* LaunchScreen.storyboard */; };
+		0337F9D71F16A759003860E3 /* HttpCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D61F16A759003860E3 /* HttpCommunication.swift */; };
+		0337F9D91F195775003860E3 /* STPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D81F195775003860E3 /* STPresets.swift */; };
+		0337F9DB1F19594C003860E3 /* presets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9DA1F19594C003860E3 /* presets.xml */; };
+		0337F9DF1F195D85003860E3 /* PresetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9DE1F195D85003860E3 /* PresetViewController.swift */; };
+		036C028D1F440CE300C97046 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036C028C1F440CE300C97046 /* Preset.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		0337F9CB1F16A43C003860E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0337F9CE1F16A43C003860E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0337F9D01F16A43C003860E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0337F9D61F16A759003860E3 /* HttpCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpCommunication.swift; sourceTree = "<group>"; };
+		0337F9D81F195775003860E3 /* STPresets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPresets.swift; sourceTree = "<group>"; };
+		0337F9DA1F19594C003860E3 /* presets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = presets.xml; sourceTree = "<group>"; };
+		0337F9DE1F195D85003860E3 /* PresetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetViewController.swift; sourceTree = "<group>"; };
+		036C028C1F440CE300C97046 /* Preset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				0337F9CB1F16A43C003860E3 /* Assets.xcassets */,
 				0337F9CD1F16A43C003860E3 /* LaunchScreen.storyboard */,
 				0337F9D01F16A43C003860E3 /* Info.plist */,
+				0337F9D61F16A759003860E3 /* HttpCommunication.swift */,
+				0337F9D81F195775003860E3 /* STPresets.swift */,
+				0337F9DA1F19594C003860E3 /* presets.xml */,
+				0337F9DE1F195D85003860E3 /* PresetViewController.swift */,
+				036C028C1F440CE300C97046 /* Preset.swift */,
 			);
 			path = SoudtouchPresets;
 			sourceTree = "<group>";
@@ -124,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0337F9DB1F19594C003860E3 /* presets.xml in Resources */,
 				0337F9CF1F16A43C003860E3 /* LaunchScreen.storyboard in Resources */,
 				0337F9CC1F16A43C003860E3 /* Assets.xcassets in Resources */,
 				0337F9CA1F16A43C003860E3 /* Main.storyboard in Resources */,
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0337F9D71F16A759003860E3 /* HttpCommunication.swift in Sources */,
+				0337F9DF1F195D85003860E3 /* PresetViewController.swift in Sources */,
 				0337F9C71F16A43C003860E3 /* ViewController.swift in Sources */,
+				0337F9D91F195775003860E3 /* STPresets.swift in Sources */,
 				0337F9C51F16A43C003860E3 /* AppDelegate.swift in Sources */,
+				036C028D1F440CE300C97046 /* Preset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +322,7 @@
 				0337F9D51F16A43C003860E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
