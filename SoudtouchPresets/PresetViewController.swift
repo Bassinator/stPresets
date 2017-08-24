@@ -26,7 +26,7 @@ class PresetViewController: UITableViewController {
         parser.delegate = presetParser
         parser.parse()
         
-        let volumeView = MPVolumeView(frame: CGRect(x: 0, y: 400, width: 300, height: 100))
+        let volumeView = MPVolumeView(frame: CGRect(x: 0, y: -200, width: 320, height: 100))
         self.view.addSubview(volumeView)
         volumeView.backgroundColor = UIColor.red
         NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged(notification:)),
@@ -39,7 +39,9 @@ class PresetViewController: UITableViewController {
         if let userInfo = notification.userInfo {
             if let volumeChangeType = userInfo["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String {
                 if volumeChangeType == "ExplicitVolumeChange" {
-                    soundtouch.volume()
+                    if let volumeNotification = userInfo["AVSystemController_AudioVolumeNotificationParameter"] as? Float {
+                        soundtouch.volume(level: volumeNotification)
+                    }
                 }
             }
         }

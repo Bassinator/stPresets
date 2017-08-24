@@ -76,8 +76,8 @@ class HTTPCommunication {
         
     }
     
-    func volume(){
-        let urlString = URL(string: "http://192.168.1.102:8090/key")
+    func volume(level: Float){
+        let urlString = URL(string: "http://192.168.1.102:8090/volume")
         var responseString:String = ""
         
         if let endpoint = urlString {
@@ -86,7 +86,8 @@ class HTTPCommunication {
             
             var request = URLRequest(url: endpoint)
             request.httpMethod = "POST"
-            let postString = "<key state=\"press\" sender=\"Gabbo\">VOLUME_DOWN</key>"
+            let volumeLevel = Int(round(level*100))
+            let postString = "<volume>" + String(volumeLevel) + "</volume>"
             request.httpBody = postString.data(using: .utf8)
             
             

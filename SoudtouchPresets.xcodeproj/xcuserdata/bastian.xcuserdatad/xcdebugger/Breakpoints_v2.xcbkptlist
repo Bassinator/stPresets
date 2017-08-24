@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SoudtouchPresets/PresetViewController.swift"
-            timestampString = "525294289.164276"
+            timestampString = "525300060.819437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SoudtouchPresets/PresetViewController.swift"
-            timestampString = "525294245.278694"
+            timestampString = "525300060.819437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "volumeChanged(notification:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,7 +54,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SoudtouchPresets/PresetViewController.swift"
@@ -65,6 +65,118 @@
             endingLineNumber = "41"
             landmarkName = "volumeChanged(notification:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoudtouchPresets/PresetViewController.swift"
+            timestampString = "525298819.495874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "volumeChanged(notification:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoudtouchPresets.PresetViewController.volumeChanged (notification : __ObjC.NSNotification) -&gt; ()"
+                  moduleName = "SoudtouchPresets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bastian/Development/soundtouch/SoudtouchPresets/SoudtouchPresets/PresetViewController.swift"
+                  timestampString = "525299798.930317"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoudtouchPresets.PresetViewController.volumeChanged (notification : __ObjC.NSNotification) -&gt; ()"
+                  moduleName = "SoudtouchPresets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bastian/Development/soundtouch/SoudtouchPresets/SoudtouchPresets/PresetViewController.swift"
+                  timestampString = "525299798.932334"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "544">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoudtouchPresets/PresetViewController.swift"
+            timestampString = "525300060.819437"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "volumeChanged(notification:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SoudtouchPresets/HttpCommunication.swift"
+            timestampString = "525300725.725324"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "volume(level:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoudtouchPresets.HTTPCommunication.volume () -&gt; ()"
+                  moduleName = "SoudtouchPresets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bastian/Development/soundtouch/SoudtouchPresets/SoudtouchPresets/HttpCommunication.swift"
+                  timestampString = "525300726.042791"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "510">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SoudtouchPresets.HTTPCommunication.(volume () -&gt; ()).(closure #1)"
+                  moduleName = "SoudtouchPresets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bastian/Development/soundtouch/SoudtouchPresets/SoudtouchPresets/HttpCommunication.swift"
+                  timestampString = "525300726.046208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81"
+                  offsetFromSymbolStart = "23">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
