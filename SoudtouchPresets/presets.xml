@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <presets>
     <preset id="1" createdOn="1499190892" updatedOn="1499455832">
         <ContentItem unusedField="0" source="INTERNET_RADIO"
@@ -21,6 +21,7 @@
             location="635" sourceAccount="" isPresetable="true">
             <itemName>Radio Argovia 90.3</itemName>
         </ContentItem>
+        <ContentItem unusedField="0" source="" location="" sourceAccount="" isPresetable="true"><itemName>Radio Argovia 90.3</itemName></ContentItem>
     </preset>
     <preset id="4" createdOn="1499455843" updatedOn="1499455843">
         <ContentItem unusedField="0" source="SPOTIFY" type="uri"
@@ -45,8 +46,4 @@
             <containerArt>
                 http://item.radio456.com/007452/logo/logo-78525.jpg</containerArt>
         </ContentItem>
-    </preset>
 </presets>
-
-
-

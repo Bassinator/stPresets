@@ -10,10 +10,5 @@ import Foundation
 
 
 class STPreset {
-    var contedntItem: ContentItem = ContentItem()
-}
-
-class ContentItem {
-    var itemName: String = String()
-    var containerArt: String = String()
+    var name: String = String()
 }
