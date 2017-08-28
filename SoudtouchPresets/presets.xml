@@ -21,7 +21,6 @@
             location="635" sourceAccount="" isPresetable="true">
             <itemName>Radio Argovia 90.3</itemName>
         </ContentItem>
-        <ContentItem unusedField="0" source="" location="" sourceAccount="" isPresetable="true"><itemName>Radio Argovia 90.3</itemName></ContentItem>
     </preset>
     <preset id="4" createdOn="1499455843" updatedOn="1499455843">
         <ContentItem unusedField="0" source="SPOTIFY" type="uri"

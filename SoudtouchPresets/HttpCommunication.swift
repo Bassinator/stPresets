@@ -9,33 +9,57 @@
 import Foundation
 
 class HTTPCommunication {
+    
+    
+    enum Mode {
+        case ONLINE;
+        case OFFLINE;
+    }
 
-    func getPreset() -> String{
+    func getPreset(mode: Mode) -> String{
 
+        
     let urlString = URL(string: "http://192.168.1.102:8090/presets")
     var responseString:String = ""
         
-    if let endpoint = urlString {
-        
-        let sem = DispatchSemaphore(value: 0)
-        
-        let task = URLSession.shared.dataTask(with: endpoint) { (data, response, error) in
-            if error != nil {
-                print(error!)
-            } else {
-                if data != nil {
-                    if let stringData = String(data: data!, encoding: String.Encoding.utf8) {
-                        responseString = stringData
-                        
-                    }
+    if ( mode == Mode.OFFLINE ) {
+        if let path = Bundle.main.url(forResource: "presets", withExtension: "xml") {
+            if XMLParser(contentsOf: path) != nil {
+                do {
+                    responseString = try String(contentsOf: path, encoding: String.Encoding.utf8)
+                }
+                catch { print ("Es ist ein Fehler beim lesen der presets vom file aufgetreten")
                 }
             }
-            sem.signal()
         }
-        task.resume()
-        sem.wait()
+    }
+    else {
         
+        if let endpoint = urlString {
+            
+           
+            
+            let sem = DispatchSemaphore(value: 0)
+            
+            let task = URLSession.shared.dataTask(with: endpoint) { (data, response, error) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    if data != nil {
+                        if let stringData = String(data: data!, encoding: String.Encoding.utf8) {
+                            responseString = stringData
+                            
+                        }
+                    }
+                }
+                sem.signal()
+            }
+            task.resume()
+            sem.wait()
+            
+           }
         }
+        
         print(responseString)
         return responseString
     }
@@ -114,3 +138,4 @@ class HTTPCommunication {
     }
     
 }
+

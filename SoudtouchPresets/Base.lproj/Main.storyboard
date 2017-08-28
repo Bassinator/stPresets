@@ -24,11 +24,19 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zBA-lG-KJd">
-                            <rect key="frame" x="0.0" y="135" width="375" height="44"/>
+                        <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" momentary="YES" id="quO-s4-Ep5">
+                            <rect key="frame" x="0.0" y="135" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                        </button>
+                            <segments>
+                                <segment title="Load Presets"/>
+                                <segment title="Save Presets"/>
+                                <segment title="SountTouch"/>
+                                <segment title="File"/>
+                            </segments>
+                            <connections>
+                                <action selector="indexChanged:" destination="Vli-eD-oWV" eventType="valueChanged" id="uIW-54-HFG"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="sTP-vQ-H4p" detailTextLabel="pM8-0g-AZh" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="i98-5N-azB">
                                 <rect key="frame" x="0.0" y="87" width="375" height="48"/>

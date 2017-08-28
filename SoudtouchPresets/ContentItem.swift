@@ -18,4 +18,15 @@ class ContentItem {
     var sourceAccount = String()
     var isPresetable = Bool()
     var itemName = String()
+    
+    init(){
+        
+    }
+    
+    init(source: String, location: String, sourceAccount: String, itemName: String) {
+        self.source = source
+        self.location = location
+        self.sourceAccount = sourceAccount
+        self.itemName = itemName
+    }
 }

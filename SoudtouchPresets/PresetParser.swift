@@ -12,27 +12,27 @@ class PresetParser: NSObject, XMLParserDelegate {
         
     
     var presets: [Preset] = []
-    var preset: Preset = Preset ()
+    var preset: Preset? = nil;
     var eName = String()
     
     // 1
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         eName = elementName
         if elementName == "preset" {
-            preset = Preset()
-            preset.id = Int(attributeDict["id"]!)!
+            let id = Int(attributeDict["id"]!)!
+            preset = Preset(id: id)
         }
         else if elementName == "ContentItem" {
-            preset.contentItem.source = attributeDict["source"]!
-            preset.contentItem.location = attributeDict["location"]!
-            preset.contentItem.sourceAccount = attributeDict["sourceAccount"]!
+            preset?.contentItem.source = attributeDict["source"]!
+            preset?.contentItem.location = attributeDict["location"]!
+            preset?.contentItem.sourceAccount = attributeDict["sourceAccount"]!
         }
     }
     
     // 2
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if ( elementName == "preset" ) {
-            presets.append(preset)
+            presets.append(preset!)
         }
     }
     
@@ -42,7 +42,7 @@ class PresetParser: NSObject, XMLParserDelegate {
         
         if (!data.isEmpty) {
             if eName == "itemName" {
-                preset.contentItem.itemName += data
+                preset?.contentItem.itemName += data
             }
         }
     }
