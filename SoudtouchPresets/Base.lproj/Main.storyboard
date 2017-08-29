@@ -17,15 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Presets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" id="r0n-iA-LcT">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="Hgp-po-hsS">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </progressView>
                         <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" segmentControlStyle="plain" momentary="YES" id="quO-s4-Ep5">
-                            <rect key="frame" x="0.0" y="135" width="375" height="30"/>
+                            <rect key="frame" x="0.0" y="78" width="375" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Load Presets"/>
@@ -39,7 +36,7 @@
                         </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="sTP-vQ-H4p" detailTextLabel="pM8-0g-AZh" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="i98-5N-azB">
-                                <rect key="frame" x="0.0" y="87" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="i98-5N-azB" id="0o6-1j-Dlz">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="47.5"/>
@@ -68,6 +65,9 @@
                             <outlet property="delegate" destination="Vli-eD-oWV" id="jgn-Je-cDB"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="progressView" destination="Hgp-po-hsS" id="7Jv-W2-92z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCi-fD-ddx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -33,6 +33,16 @@ class PresetViewController: UITableViewController {
         }
     }
     
+    @IBOutlet weak var progressView: UIProgressView!
+    
+    var counter:Int = 0 {
+        didSet {
+            let fractionalProgress = Float(counter) / 100.0
+            let animated = counter != 0
+            
+            progressView.setProgress(fractionalProgress, animated: animated)
+        }
+    }
     
     func persistPresets() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(presetParser.presets, toFile: Preset.ArchiveURL.path)
@@ -66,6 +76,8 @@ class PresetViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.setProgress(0, animated: true)
     
         
         // following to disable audio control with volume rocker
@@ -121,11 +133,20 @@ class PresetViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            for i in 0...10 {
+                sleep(1)
+                print(i)
+                self.progressView.setProgress(Float(i*10), animated: false)
+            }
+        }
+    
+        
         let contentItem = presetParser.presets[indexPath.row].contentItem
         let itemString = "<ContentItem unusedField=\"0\" source=\"" + contentItem.source + "\" location=\"" + contentItem.location + "\" sourceAccount=\"" + contentItem.sourceAccount + "\" isPresetable=\"true\"><itemName>" + contentItem.itemName + "</itemName></ContentItem>"
         
         print("\n" + itemString + "\n")
-        soundtouch.setSource(source: itemString)
+        // soundtouch.setSource(source: itemString)
     }
 
     
