@@ -37,7 +37,7 @@ class Preset : NSObject, NSCoding {
     required convenience init?(coder aDecoder: NSCoder) {
         
         // The name is required. If we cannot decode a name string, the initializer should fail.
-        guard let id = (aDecoder.decodeInteger(forKey: PropertyKey.id)) as? Int else {
+        guard let id = (aDecoder.decodeInteger(forKey: PropertyKey.id)) as Int! else {
             os_log("Unable to decode the id for a Preset object.", log: OSLog.default, type: .debug)
             return nil
         }

@@ -132,12 +132,18 @@ class PresetViewController: UITableViewController {
         return cell
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DispatchQueue.main.async {
-            for i in 0...10 {
-                sleep(1)
-                print(i)
-                self.progressView.setProgress(Float(i*10), animated: false)
+        
+        DispatchQueue.global(qos: .utility).async {
+            for i in 1 ..< 11 {
+                
+                usleep(10000)
+                
+                DispatchQueue.main.async {
+                    // now update UI on main thread
+                    self.progressView.setProgress(Float(i) / Float(10), animated: true)
+                }
             }
         }
     
