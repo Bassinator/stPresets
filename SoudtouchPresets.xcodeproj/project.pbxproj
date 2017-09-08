@@ -10,13 +10,15 @@
 		0337F9C51F16A43C003860E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9C41F16A43C003860E3 /* AppDelegate.swift */; };
 		0337F9CA1F16A43C003860E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9C81F16A43C003860E3 /* Main.storyboard */; };
 		0337F9CC1F16A43C003860E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9CB1F16A43C003860E3 /* Assets.xcassets */; };
-		0337F9D71F16A759003860E3 /* HttpCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D61F16A759003860E3 /* HttpCommunication.swift */; };
-		0337F9D91F195775003860E3 /* STPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D81F195775003860E3 /* STPresets.swift */; };
+		0337F9D71F16A759003860E3 /* Soundtouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D61F16A759003860E3 /* Soundtouch.swift */; };
 		0337F9DF1F195D85003860E3 /* PresetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9DE1F195D85003860E3 /* PresetViewController.swift */; };
 		03620F641F4CCD6000E028F5 /* ContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03620F631F4CCD6000E028F5 /* ContentItem.swift */; };
 		03620F661F4D4AC400E028F5 /* PresetParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03620F651F4D4AC400E028F5 /* PresetParser.swift */; };
 		039110F11F4627E70092FDB1 /* presets.xml in Resources */ = {isa = PBXBuildFile; fileRef = 039110F01F4627E70092FDB1 /* presets.xml */; };
 		039110F31F46281B0092FDB1 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039110F21F46281B0092FDB1 /* Preset.swift */; };
+		03FB62B71F607E58006BC083 /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB62B61F607E58006BC083 /* Volume.swift */; };
+		03FB62B91F6084F3006BC083 /* VolumeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FB62B81F6084F3006BC083 /* VolumeParser.swift */; };
+		03FD97F71F58967C001647A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FD97F61F58967C001647A2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,13 +27,15 @@
 		0337F9C91F16A43C003860E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0337F9CB1F16A43C003860E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0337F9D01F16A43C003860E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0337F9D61F16A759003860E3 /* HttpCommunication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpCommunication.swift; sourceTree = "<group>"; };
-		0337F9D81F195775003860E3 /* STPresets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = STPresets.swift; sourceTree = "<group>"; };
+		0337F9D61F16A759003860E3 /* Soundtouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soundtouch.swift; sourceTree = "<group>"; };
 		0337F9DE1F195D85003860E3 /* PresetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetViewController.swift; sourceTree = "<group>"; };
 		03620F631F4CCD6000E028F5 /* ContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentItem.swift; sourceTree = "<group>"; };
 		03620F651F4D4AC400E028F5 /* PresetParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetParser.swift; sourceTree = "<group>"; };
 		039110F01F4627E70092FDB1 /* presets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = presets.xml; sourceTree = "<group>"; };
 		039110F21F46281B0092FDB1 /* Preset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		03FB62B61F607E58006BC083 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		03FB62B81F6084F3006BC083 /* VolumeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeParser.swift; sourceTree = "<group>"; };
+		03FD97F61F58967C001647A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,13 +72,15 @@
 				0337F9C81F16A43C003860E3 /* Main.storyboard */,
 				0337F9CB1F16A43C003860E3 /* Assets.xcassets */,
 				0337F9D01F16A43C003860E3 /* Info.plist */,
-				0337F9D61F16A759003860E3 /* HttpCommunication.swift */,
-				0337F9D81F195775003860E3 /* STPresets.swift */,
+				03FB62B81F6084F3006BC083 /* VolumeParser.swift */,
+				0337F9D61F16A759003860E3 /* Soundtouch.swift */,
 				0337F9DE1F195D85003860E3 /* PresetViewController.swift */,
 				03620F651F4D4AC400E028F5 /* PresetParser.swift */,
 				039110F01F4627E70092FDB1 /* presets.xml */,
 				03620F631F4CCD6000E028F5 /* ContentItem.swift */,
 				039110F21F46281B0092FDB1 /* Preset.swift */,
+				03FB62B61F607E58006BC083 /* Volume.swift */,
+				03FD97F61F58967C001647A2 /* LaunchScreen.storyboard */,
 			);
 			path = SoudtouchPresets;
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0337F9CC1F16A43C003860E3 /* Assets.xcassets in Resources */,
+				03FD97F71F58967C001647A2 /* LaunchScreen.storyboard in Resources */,
 				039110F11F4627E70092FDB1 /* presets.xml in Resources */,
 				0337F9CA1F16A43C003860E3 /* Main.storyboard in Resources */,
 			);
@@ -152,12 +159,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0337F9D71F16A759003860E3 /* HttpCommunication.swift in Sources */,
+				0337F9D71F16A759003860E3 /* Soundtouch.swift in Sources */,
 				0337F9DF1F195D85003860E3 /* PresetViewController.swift in Sources */,
+				03FB62B91F6084F3006BC083 /* VolumeParser.swift in Sources */,
 				039110F31F46281B0092FDB1 /* Preset.swift in Sources */,
 				03620F641F4CCD6000E028F5 /* ContentItem.swift in Sources */,
 				03620F661F4D4AC400E028F5 /* PresetParser.swift in Sources */,
-				0337F9D91F195775003860E3 /* STPresets.swift in Sources */,
+				03FB62B71F607E58006BC083 /* Volume.swift in Sources */,
 				0337F9C51F16A43C003860E3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

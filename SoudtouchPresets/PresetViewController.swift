@@ -15,7 +15,7 @@ import os.log
 class PresetViewController: UITableViewController {
   
     let presetParser = PresetParser()
-    let soundtouch:HTTPCommunication = HTTPCommunication()
+    let soundtouch = Soundtouch()
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex
@@ -25,23 +25,28 @@ class PresetViewController: UITableViewController {
         case 1:
             persistPresets()
         case 2:
-            getPresetsFromST(mode: HTTPCommunication.Mode.ONLINE)
+            getPresetsFromST(mode: Soundtouch.Mode.ONLINE)
         case 3:
-            getPresetsFromST(mode: HTTPCommunication.Mode.OFFLINE)
+            getPresetsFromST(mode: Soundtouch.Mode.OFFLINE)
+        case 4:
+            pushPresetsToST()
         default:
             break;
         }
     }
     
-    @IBOutlet weak var progressView: UIProgressView!
-    
-    var counter:Int = 0 {
-        didSet {
-            let fractionalProgress = Float(counter) / 100.0
-            let animated = counter != 0
+    func pushPresetsToST() {
+        _ = soundtouch.getVolume()
+        for index in 0...5 {
+            let contentItem = presetParser.presets[index].contentItem
+            let itemString = "<ContentItem unusedField=\"0\" source=\"" + contentItem.source + "\" location=\"" + contentItem.location + "\" sourceAccount=\"" + contentItem.sourceAccount + "\" isPresetable=\"true\"><itemName>" + contentItem.itemName + "</itemName></ContentItem>"
+            soundtouch.setSource(source: itemString)
             
-            progressView.setProgress(fractionalProgress, animated: animated)
+            soundtouch.setPreset(preset: index+1)
+            
+            // sleep(2)
         }
+        //  soundtouch.setVolume(level: volume);
     }
     
     func persistPresets() {
@@ -59,7 +64,7 @@ class PresetViewController: UITableViewController {
         self.loadView()
     }
     
-    func getPresetsFromST(mode: HTTPCommunication.Mode){
+    func getPresetsFromST(mode: Soundtouch.Mode){
         let presetsXml = soundtouch.getPreset(mode : mode)
         let xmlData = presetsXml.data(using: String.Encoding.utf8)!
         let parser = XMLParser(data: xmlData)
@@ -76,9 +81,8 @@ class PresetViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        progressView.setProgress(0, animated: true)
-    
+        getPresetsFromST(mode: Soundtouch.Mode.ONLINE)
+        // getPresetsFromST(mode: Soundtouch.Mode.OFFLINE)
         
         // following to disable audio control with volume rocker
         let session = AVAudioSession.sharedInstance()
@@ -105,7 +109,7 @@ class PresetViewController: UITableViewController {
             if let volumeChangeType = userInfo["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String {
                 if volumeChangeType == "ExplicitVolumeChange" {
                     if let volumeNotification = userInfo["AVSystemController_AudioVolumeNotificationParameter"] as? Float {
-                        soundtouch.volume(level: volumeNotification)
+                        soundtouch.setVolume(level: volumeNotification)
                     }
                 }
             }
@@ -134,25 +138,11 @@ class PresetViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        DispatchQueue.global(qos: .utility).async {
-            for i in 1 ..< 11 {
-                
-                usleep(10000)
-                
-                DispatchQueue.main.async {
-                    // now update UI on main thread
-                    self.progressView.setProgress(Float(i) / Float(10), animated: true)
-                }
-            }
-        }
-    
-        
         let contentItem = presetParser.presets[indexPath.row].contentItem
         let itemString = "<ContentItem unusedField=\"0\" source=\"" + contentItem.source + "\" location=\"" + contentItem.location + "\" sourceAccount=\"" + contentItem.sourceAccount + "\" isPresetable=\"true\"><itemName>" + contentItem.itemName + "</itemName></ContentItem>"
         
         print("\n" + itemString + "\n")
-        // soundtouch.setSource(source: itemString)
+        soundtouch.setSource(source: itemString)
     }
 
     
