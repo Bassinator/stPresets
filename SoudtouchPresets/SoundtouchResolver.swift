@@ -1,13 +1,28 @@
-//: Playground - noun: a place where people can play
+//
+//  BMNSDelegate.swift
+//  SoudtouchPresets
+//
+//  Created by Bastian Bukatz on 09.09.17.
+//  Copyright © 2017 Bastian Bukatz. All rights reserved.
+//
 
+import Foundation
 import UIKit
 
-class BMNSDelegate : NSObject, NetServiceDelegate,
-    NetServiceBrowserDelegate {
+class SoundtouchResolver : NSObject, NetServiceDelegate,
+NetServiceBrowserDelegate {
     var nsb : NetServiceBrowser!
     var services = [NetService]()
+    let callback: (String, Int) -> Void
     
-
+    init(callback: @escaping (_ hostname: String, _ port: Int) -> Void) {
+        self.callback = callback
+        super.init()
+        nsb = NetServiceBrowser()
+        nsb.delegate = self
+    }
+    
+    
     func updateInterface () {
         for service in self.services {
             if service.port == -1 {
@@ -18,14 +33,20 @@ class BMNSDelegate : NSObject, NetServiceDelegate,
             } else {
                 print("service \(service.name) of type \(service.type)," +
                     "port \(service.port), hostname \(service.hostName), addresses \(service.addresses)")
+                print(service.hostName ?? "")
+                callback(service.hostName!, service.port);
             }
         }
     }
     
+    
+    // NetServiceDelegate
     func netServiceDidResolveAddress(_ sender: NetService) {
+        print("adresse resolved")
         self.updateInterface()
     }
     
+    // NetServiceBrowserDelegate
     func netServiceBrowser(_ aNetServiceBrowser: NetServiceBrowser, didFind aNetService: NetService, moreComing: Bool) {
         print("adding a service")
         self.services.append(aNetService)
@@ -44,12 +65,9 @@ class BMNSDelegate : NSObject, NetServiceDelegate,
         }
     }
     
-}
+    func getSTHostname() -> String{
+        nsb.searchForServices(ofType:"_soundtouch._tcp.", inDomain: "local.")
+        return "";
+    }
 
-let sb = BMNSDelegate()
-sb.services.removeAll()
-sb.nsb = NetServiceBrowser()
-sb.nsb.delegate = sb
-sb.nsb.includesPeerToPeer = true
-sb.nsb.searchForServices(ofType:"_soundtouch._tcp.", inDomain: "local.")
-RunLoop.current.run()
+}

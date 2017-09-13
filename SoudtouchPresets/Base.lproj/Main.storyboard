@@ -13,21 +13,17 @@
         <scene sceneID="2KT-bf-GSc">
             <objects>
                 <tableViewController id="Vli-eD-oWV" customClass="PresetViewController" customModule="SoudtouchPresets" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="yPv-S2-mD5">
+                    <tableView key="view" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="6" allowsMultipleSelection="YES" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" id="yPv-S2-mD5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" cocoaTouchSystemColor="lightTextColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="AoP-9d-Iae">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="63"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                        <view key="tableFooterView" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gxp-hq-6qK">
-                            <rect key="frame" x="0.0" y="139" width="320" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="137"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="plain" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="quO-s4-Ep5">
-                                    <rect key="frame" x="8" y="8" width="304" height="29"/>
+                                    <rect key="frame" x="10" y="25" width="300" height="29"/>
                                     <segments>
                                         <segment title="load"/>
                                         <segment title="save"/>
@@ -39,17 +35,31 @@
                                         <action selector="indexChanged:" destination="Vli-eD-oWV" eventType="valueChanged" id="uIW-54-HFG"/>
                                     </connections>
                                 </segmentedControl>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uu5-sI-16U">
+                                    <rect key="frame" x="5" y="86" width="310" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="quO-s4-Ep5" secondAttribute="bottom" constant="20" id="Wzb-VN-hGA"/>
-                                <constraint firstItem="quO-s4-Ep5" firstAttribute="leading" secondItem="gxp-hq-6qK" secondAttribute="leading" constant="8" id="xGn-ee-sNA"/>
-                                <constraint firstAttribute="trailing" secondItem="quO-s4-Ep5" secondAttribute="trailing" constant="8" id="yCn-hQ-uw0"/>
+                                <constraint firstItem="Uu5-sI-16U" firstAttribute="leading" secondItem="AoP-9d-Iae" secondAttribute="leading" constant="5" id="7Ka-Gl-g9a"/>
+                                <constraint firstAttribute="trailing" secondItem="quO-s4-Ep5" secondAttribute="trailing" constant="10" id="CKA-Md-gbC"/>
+                                <constraint firstItem="Uu5-sI-16U" firstAttribute="top" secondItem="quO-s4-Ep5" secondAttribute="bottom" constant="33" id="Kq9-kB-Q6B"/>
+                                <constraint firstItem="quO-s4-Ep5" firstAttribute="top" secondItem="AoP-9d-Iae" secondAttribute="top" constant="25" id="dYv-ba-GvU"/>
+                                <constraint firstItem="quO-s4-Ep5" firstAttribute="leading" secondItem="AoP-9d-Iae" secondAttribute="leading" constant="10" id="gDa-Tc-7fU"/>
+                                <constraint firstAttribute="trailing" secondItem="Uu5-sI-16U" secondAttribute="trailing" constant="5" id="pmb-xU-LCR"/>
                             </constraints>
+                        </view>
+                        <view key="tableFooterView" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="gxp-hq-6qK">
+                            <rect key="frame" x="0.0" y="213" width="320" height="56"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="sTP-vQ-H4p" detailTextLabel="pM8-0g-AZh" rowHeight="48" style="IBUITableViewCellStyleSubtitle" id="i98-5N-azB">
-                                <rect key="frame" x="0.0" y="91" width="320" height="48"/>
+                                <rect key="frame" x="0.0" y="165" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="i98-5N-azB" id="0o6-1j-Dlz">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
@@ -79,6 +89,10 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="qLl-bV-4mz"/>
+                    <connections>
+                        <outlet property="buttonBar" destination="quO-s4-Ep5" id="WWj-26-iu1"/>
+                        <outlet property="status" destination="Uu5-sI-16U" id="4bx-eX-vda"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MCi-fD-ddx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

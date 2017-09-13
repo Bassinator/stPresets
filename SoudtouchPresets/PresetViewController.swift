@@ -9,13 +9,17 @@
 
 import UIKit
 import Foundation
-import MediaPlayer
 import os.log
 
 class PresetViewController: UITableViewController {
   
     let presetParser = PresetParser()
     let soundtouch = Soundtouch()
+    
+    @IBOutlet private weak var status: UILabel!
+    
+    @IBOutlet weak var buttonBar: UISegmentedControl!
+
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex
@@ -56,7 +60,6 @@ class PresetViewController: UITableViewController {
         } else {
             os_log("Failed to save presets...", log: OSLog.default, type: .error)
         }
-        
     }
     
     func loadPresets() {
@@ -72,49 +75,41 @@ class PresetViewController: UITableViewController {
         parser.delegate = presetParser
         presetParser.presets.removeAll()
         parser.parse()
-        
         self.loadView()
     }
     
-    
-    
+    override func loadView() {
+        super.loadView()
+        self.status.text = self.soundtouch.hostname.components(separatedBy: ".").first
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPresetsFromST(mode: Soundtouch.Mode.ONLINE)
-        // getPresetsFromST(mode: Soundtouch.Mode.OFFLINE)
         
-        // following to disable audio control with volume rocker
-        let session = AVAudioSession.sharedInstance()
-        do {
-            // 1) Configure your audio session category, options, and mode
-            // 2) Activate your audio session to enable your custom configuration
-            try session.setActive(true)
-        } catch let error as NSError {
-            print("Unable to activate audio session:  \(error.localizedDescription)")
-        }
         
-        // observer volume rocker (hiding the view by displaying it outside the phone display)
-        let volumeView = MPVolumeView(frame: CGRect(x: 0, y: -200, width: 320, height: 100))
-        self.view.addSubview(volumeView)
-        volumeView.backgroundColor = UIColor.red
-        NotificationCenter.default.addObserver(self, selector: #selector(volumeChanged(notification:)),
-                                               name: NSNotification.Name(rawValue: "AVSystemController_SystemVolumeDidChangeNotification"),
-                                               object: nil)
-    }
-    
-    func volumeChanged(notification: NSNotification) {
-        
-        if let userInfo = notification.userInfo {
-            if let volumeChangeType = userInfo["AVSystemController_AudioVolumeChangeReasonNotificationParameter"] as? String {
-                if volumeChangeType == "ExplicitVolumeChange" {
-                    if let volumeNotification = userInfo["AVSystemController_AudioVolumeNotificationParameter"] as? Float {
-                        soundtouch.setVolume(level: volumeNotification)
-                    }
-                }
+        // search Soundtouch devices in background
+        self.buttonBar.setEnabled(false, forSegmentAt: 2)
+        self.buttonBar.setEnabled(false, forSegmentAt: 4)
+        sleep(1)
+        DispatchQueue.main.async {
+            let resolver = SoundtouchResolver(){ (hostname: String, port: Int) in
+                print("hostname: \(hostname)")
+                self.soundtouch.hostname = hostname
+                self.soundtouch.port = port
+                self.buttonBar.setEnabled(true, forSegmentAt: 2)
+                self.buttonBar.setEnabled(true, forSegmentAt: 4)
+                self.status.text = self.soundtouch.hostname.components(separatedBy: ".").first
+            }
+            resolver.nsb.includesPeerToPeer = true
+            resolver.nsb.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
+            resolver.nsb.searchForServices(ofType:"_soundtouch._tcp.", inDomain: "local.")
+            withExtendedLifetime((resolver)) {
+                RunLoop.current.run()
             }
         }
     }
+    
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -134,15 +129,6 @@ class PresetViewController: UITableViewController {
         cell.detailTextLabel?.text = preset.contentItem.itemName
         
         return cell
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contentItem = presetParser.presets[indexPath.row].contentItem
-        let itemString = "<ContentItem unusedField=\"0\" source=\"" + contentItem.source + "\" location=\"" + contentItem.location + "\" sourceAccount=\"" + contentItem.sourceAccount + "\" isPresetable=\"true\"><itemName>" + contentItem.itemName + "</itemName></ContentItem>"
-        
-        print("\n" + itemString + "\n")
-        soundtouch.setSource(source: itemString)
     }
 
     

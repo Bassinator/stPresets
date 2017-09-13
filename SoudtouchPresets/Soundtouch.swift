@@ -10,6 +10,9 @@ import Foundation
 
 class Soundtouch {
     
+    var hostname = ""
+    var port = Int()
+    
     
     enum Mode {
         case ONLINE;
@@ -49,7 +52,7 @@ class Soundtouch {
     }
     
     func get(function: Function) -> Data {
-        let urlString = URL(string: "http://192.168.1.102:8090/" + function.rawValue)
+        let urlString = URL(string: "http://" + hostname + ":" + String(port) + "/" + function.rawValue)
         var result = Data()
         var responseBody:String = "";
         if let endpoint = urlString {
@@ -75,7 +78,7 @@ class Soundtouch {
     }
     
     func set(function: Function, postBody : String) {
-        let urlString = URL(string: "http://192.168.1.102:8090/" + function.rawValue)
+        let urlString = URL(string: "http://" + hostname + ":" + String(port) + "/" + function.rawValue)
         var responseBody:String = "";
         if let endpoint = urlString {
             let sem = DispatchSemaphore(value: 0)
