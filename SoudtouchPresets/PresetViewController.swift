@@ -90,23 +90,23 @@ class PresetViewController: UITableViewController {
         // search Soundtouch devices in background
         self.buttonBar.setEnabled(false, forSegmentAt: 2)
         self.buttonBar.setEnabled(false, forSegmentAt: 4)
-        sleep(1)
-        DispatchQueue.main.async {
-            let resolver = SoundtouchResolver(){ (hostname: String, port: Int) in
-                print("hostname: \(hostname)")
-                self.soundtouch.hostname = hostname
-                self.soundtouch.port = port
-                self.buttonBar.setEnabled(true, forSegmentAt: 2)
-                self.buttonBar.setEnabled(true, forSegmentAt: 4)
-                self.status.text = self.soundtouch.hostname.components(separatedBy: ".").first
-            }
-            resolver.nsb.includesPeerToPeer = true
-            resolver.nsb.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
-            resolver.nsb.searchForServices(ofType:"_soundtouch._tcp.", inDomain: "local.")
-            withExtendedLifetime((resolver)) {
-                RunLoop.current.run()
-            }
-        }
+//        sleep(1)
+//        DispatchQueue.main.async {
+//            let resolver = SoundtouchResolver(){ (hostname: String, port: Int) in
+//                print("hostname: \(hostname)")
+//                self.soundtouch.hostname = hostname
+//                self.soundtouch.port = port
+//                self.buttonBar.setEnabled(true, forSegmentAt: 2)
+//                self.buttonBar.setEnabled(true, forSegmentAt: 4)
+//                self.status.text = self.soundtouch.hostname.components(separatedBy: ".").first
+//            }
+//            resolver.nsb.includesPeerToPeer = true
+//            resolver.nsb.schedule(in: RunLoop.current, forMode: .defaultRunLoopMode)
+//            resolver.nsb.searchForServices(ofType:"_soundtouch._tcp.", inDomain: "local.")
+//            withExtendedLifetime((resolver)) {
+//                RunLoop.current.run()
+//            }
+//        }
     }
     
     

@@ -12,6 +12,7 @@
 		0337F9CC1F16A43C003860E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0337F9CB1F16A43C003860E3 /* Assets.xcassets */; };
 		0337F9D71F16A759003860E3 /* Soundtouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9D61F16A759003860E3 /* Soundtouch.swift */; };
 		0337F9DF1F195D85003860E3 /* PresetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0337F9DE1F195D85003860E3 /* PresetViewController.swift */; };
+		0341937B1F70547000AA5F95 /* SoudtouchPresetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0341937A1F70547000AA5F95 /* SoudtouchPresetsTests.swift */; };
 		03620F641F4CCD6000E028F5 /* ContentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03620F631F4CCD6000E028F5 /* ContentItem.swift */; };
 		03620F661F4D4AC400E028F5 /* PresetParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03620F651F4D4AC400E028F5 /* PresetParser.swift */; };
 		03785E961F643182002C738E /* SoundtouchResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03785E951F643182002C738E /* SoundtouchResolver.swift */; };
@@ -22,19 +23,35 @@
 		03FD97F71F58967C001647A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03FD97F61F58967C001647A2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0341937D1F70547000AA5F95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0337F9B91F16A43C003860E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0337F9C01F16A43C003860E3;
+			remoteInfo = SoudtouchPresets;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0337F9C11F16A43C003860E3 /* SoudtouchPresets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoudtouchPresets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0337F9C41F16A43C003860E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0337F9C91F16A43C003860E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0337F9CB1F16A43C003860E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0337F9D01F16A43C003860E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0337F9D61F16A759003860E3 /* Soundtouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soundtouch.swift; sourceTree = "<group>"; };
 		0337F9DE1F195D85003860E3 /* PresetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetViewController.swift; sourceTree = "<group>"; };
+		033D7E1F1F704ABB00415362 /* SoudtouchPresetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoudtouchPresetsTests.swift; sourceTree = "<group>"; };
+		033D7E211F704ABB00415362 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		033D7E291F704D2000415362 /* SoundtouchTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtouchTest.swift; sourceTree = "<group>"; };
+		0341937A1F70547000AA5F95 /* SoudtouchPresetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoudtouchPresetsTests.swift; sourceTree = "<group>"; };
+		0341937C1F70547000AA5F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03620F631F4CCD6000E028F5 /* ContentItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentItem.swift; sourceTree = "<group>"; };
 		03620F651F4D4AC400E028F5 /* PresetParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetParser.swift; sourceTree = "<group>"; };
 		03785E951F643182002C738E /* SoundtouchResolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundtouchResolver.swift; sourceTree = "<group>"; };
 		039110F01F4627E70092FDB1 /* presets.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = presets.xml; sourceTree = "<group>"; };
 		039110F21F46281B0092FDB1 /* Preset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		03E57BDA1F705997001956E3 /* SoudtouchPresets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoudtouchPresets.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03E57BDB1F705997001956E3 /* SoudtouchPresetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoudtouchPresetsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		03FB62B61F607E58006BC083 /* Volume.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		03FB62B81F6084F3006BC083 /* VolumeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeParser.swift; sourceTree = "<group>"; };
 		03FD97F61F58967C001647A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +65,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		034193751F70547000AA5F95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,16 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				0337F9C31F16A43C003860E3 /* SoudtouchPresets */,
-				0337F9C21F16A43C003860E3 /* Products */,
+				033D7E1E1F704ABB00415362 /* SoudtouchPresetsTests */,
+				034193791F70547000AA5F95 /* SoudtouchPresetsTests */,
+				03E57BDC1F7059B1001956E3 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		0337F9C21F16A43C003860E3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0337F9C11F16A43C003860E3 /* SoudtouchPresets.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0337F9C31F16A43C003860E3 /* SoudtouchPresets */ = {
@@ -88,6 +106,34 @@
 			path = SoudtouchPresets;
 			sourceTree = "<group>";
 		};
+		033D7E1E1F704ABB00415362 /* SoudtouchPresetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				033D7E291F704D2000415362 /* SoundtouchTest.swift */,
+				033D7E1F1F704ABB00415362 /* SoudtouchPresetsTests.swift */,
+				033D7E211F704ABB00415362 /* Info.plist */,
+			);
+			path = SoudtouchPresetsTests;
+			sourceTree = "<group>";
+		};
+		034193791F70547000AA5F95 /* SoudtouchPresetsTests */ = {
+			isa = PBXGroup;
+			children = (
+				0341937A1F70547000AA5F95 /* SoudtouchPresetsTests.swift */,
+				0341937C1F70547000AA5F95 /* Info.plist */,
+			);
+			path = SoudtouchPresetsTests;
+			sourceTree = "<group>";
+		};
+		03E57BDC1F7059B1001956E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03E57BDA1F705997001956E3 /* SoudtouchPresets.app */,
+				03E57BDB1F705997001956E3 /* SoudtouchPresetsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -105,8 +151,26 @@
 			);
 			name = SoudtouchPresets;
 			productName = SoudtouchPresets;
-			productReference = 0337F9C11F16A43C003860E3 /* SoudtouchPresets.app */;
+			productReference = 03E57BDA1F705997001956E3 /* SoudtouchPresets.app */;
 			productType = "com.apple.product-type.application";
+		};
+		034193771F70547000AA5F95 /* SoudtouchPresetsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 034193811F70547000AA5F95 /* Build configuration list for PBXNativeTarget "SoudtouchPresetsTests" */;
+			buildPhases = (
+				034193741F70547000AA5F95 /* Sources */,
+				034193751F70547000AA5F95 /* Frameworks */,
+				034193761F70547000AA5F95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0341937E1F70547000AA5F95 /* PBXTargetDependency */,
+			);
+			name = SoudtouchPresetsTests;
+			productName = SoudtouchPresetsTests;
+			productReference = 03E57BDB1F705997001956E3 /* SoudtouchPresetsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -123,6 +187,12 @@
 						DevelopmentTeam = 2M778SM4WF;
 						ProvisioningStyle = Automatic;
 					};
+					034193771F70547000AA5F95 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 2M778SM4WF;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 0337F9C01F16A43C003860E3;
+					};
 				};
 			};
 			buildConfigurationList = 0337F9BC1F16A43C003860E3 /* Build configuration list for PBXProject "SoudtouchPresets" */;
@@ -134,11 +204,12 @@
 				Base,
 			);
 			mainGroup = 0337F9B81F16A43C003860E3;
-			productRefGroup = 0337F9C21F16A43C003860E3 /* Products */;
+			productRefGroup = 0337F9B81F16A43C003860E3;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0337F9C01F16A43C003860E3 /* SoudtouchPresets */,
+				034193771F70547000AA5F95 /* SoudtouchPresetsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +223,13 @@
 				03FD97F71F58967C001647A2 /* LaunchScreen.storyboard in Resources */,
 				039110F11F4627E70092FDB1 /* presets.xml in Resources */,
 				0337F9CA1F16A43C003860E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		034193761F70547000AA5F95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +252,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		034193741F70547000AA5F95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0341937B1F70547000AA5F95 /* SoudtouchPresetsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0341937E1F70547000AA5F95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0337F9C01F16A43C003860E3 /* SoudtouchPresets */;
+			targetProxy = 0341937D1F70547000AA5F95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0337F9C81F16A43C003860E3 /* Main.storyboard */ = {
@@ -307,6 +401,34 @@
 			};
 			name = Release;
 		};
+		0341937F1F70547000AA5F95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2M778SM4WF;
+				INFOPLIST_FILE = SoudtouchPresetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.bassinator.shareOkey.SoudtouchPresetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoudtouchPresets.app/SoudtouchPresets";
+			};
+			name = Debug;
+		};
+		034193801F70547000AA5F95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2M778SM4WF;
+				INFOPLIST_FILE = SoudtouchPresetsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.bassinator.shareOkey.SoudtouchPresetsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoudtouchPresets.app/SoudtouchPresets";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -324,6 +446,15 @@
 			buildConfigurations = (
 				0337F9D41F16A43C003860E3 /* Debug */,
 				0337F9D51F16A43C003860E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		034193811F70547000AA5F95 /* Build configuration list for PBXNativeTarget "SoudtouchPresetsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0341937F1F70547000AA5F95 /* Debug */,
+				034193801F70547000AA5F95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
